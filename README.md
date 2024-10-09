@@ -1,8 +1,32 @@
-# React + Vite
+# Complaint Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A web-based complaint management system where consumers can report issues, and agents can track, manage, and resolve complaints efficiently.
 
-Currently, two official plugins are available:
+## Features
+- **Complaint Submission**: Allows consumers to submit complaints with relevant details.
+- **Status Tracking**: Agents can track complaint status in real-time.
+- **Search & Filter**: Filter complaints by date, type, or status.
+- **Report Generation**: Download daily/monthly reports of complaints.
+- **Dashboard**: Visual representation of complaint data using charts and grids.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React**: Frontend framework.
+- **Vite**: For fast development.
+- **Styled-components**: Component-based styling.
+- **MUI (Material UI)**: Icons and components.
+- **XGrid**: Handling data tables.
+- **Recharts**: Data visualization.
+- **Context API**: State management.
+
+## Getting Started
+
+### Prerequisites
+- Node.js v14+ installed.
+- npm or yarn.
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   https://darckie.github.io/CompliantPortal/
