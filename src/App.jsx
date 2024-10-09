@@ -63,7 +63,7 @@ function App() {
   const [hasNavigated, setHasNavigated] = useState(false);
 
   // Check if the current path is the home page
-  const isHomePage = location.pathname === '/pcp2/';
+  const isHomePage = location.pathname === '/CompliantPortal/';
 
   return (
     <ViewPort>
@@ -73,17 +73,17 @@ function App() {
 
       {/* Define Routes */}
       <Routes>
-        <Route path="/pcp2/" element={<Home />} />
-        <Route path="/pcp2/TrackComplaint" element={<TrackComplaint />} />
-        <Route path="/pcp2/TodaysComplaint" element={<TodaysComplaint />} />
-        <Route path="/pcp2/NewComplaint" element={<NewComplaintLvel1 />} />
-        <Route path="/pcp2/NewRegComplaint" element={<NewRegComplaint />} />
-        <Route path="/pcp2/RegisteredInNccrp" element={<RegisteredInNccrp />} />
-        <Route path="/pcp2/PendingComplaints" element={<PendingComplaints />} />
-        <Route path="/pcp2/ComplaintBoard" element={<ComplaintBoard />} />
-        <Route path="/pcp2/CallDetails" element={<CallDetails />} />
-        <Route path="/pcp2/Apr" element={<Apr />} />
-        <Route path="/pcp2/Dashboard" element={<Dashboard />} />
+        <Route path="/CompliantPortal/" element={<Home />} />
+        <Route path="/CompliantPortal/TrackComplaint" element={<TrackComplaint />} />
+        <Route path="/CompliantPortal/TodaysComplaint" element={<TodaysComplaint />} />
+        <Route path="/CompliantPortal/NewComplaint" element={<NewComplaintLvel1 />} />
+        <Route path="/CompliantPortal/NewRegComplaint" element={<NewRegComplaint />} />
+        <Route path="/CompliantPortal/RegisteredInNccrp" element={<RegisteredInNccrp />} />
+        <Route path="/CompliantPortal/PendingComplaints" element={<PendingComplaints />} />
+        <Route path="/CompliantPortal/ComplaintBoard" element={<ComplaintBoard />} />
+        <Route path="/CompliantPortal/CallDetails" element={<CallDetails />} />
+        <Route path="/CompliantPortal/Apr" element={<Apr />} />
+        <Route path="/CompliantPortal/Dashboard" element={<Dashboard />} />
       </Routes>
     </ViewPort>
   );

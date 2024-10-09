@@ -2996,7 +2996,7 @@ const NewComplaint = () => {
     const closeBoth = () => {
         setLoaderOn(false);
         setCcidBox(false);
-        navigate('/pcp2/TodaysComplaint');
+        navigate('/CompliantPortal/TodaysComplaint');
     }
     // TABLE ------------------------------------DATA GRID 
     const columns = [

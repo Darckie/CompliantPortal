@@ -104,12 +104,12 @@ const Home = () => {
     const navigate = useNavigate();
 
     const gotocomplaint = () => {
-        navigate('/pcp2/Dashboard');
+        navigate('/CompliantPortal/Dashboard');
     }
 
 
     const gotocomplaint2 = () => {
-        navigate('/pcp2/ComplaintBoard');
+        navigate('/CompliantPortal/ComplaintBoard');
     }
 
     const styles = useStyles();

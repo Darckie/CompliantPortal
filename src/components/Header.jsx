@@ -1,4 +1,4 @@
-import { GTranslateOutlined, LogoutOutlined, Menu, PersonPinCircleRounded } from '@mui/icons-material'
+import { GTranslateOutlined, Home, LogoutOutlined, Menu, PersonPinCircleRounded } from '@mui/icons-material'
 import '../css/complaint.css';
 import { Container, Paper, Typography, TextField, MenuItem, Select, FormControl, InputLabel, Button, Grid, Box, FormControlLabel, Checkbox, FormHelperText } from '@mui/material';
 import styled from 'styled-components';
@@ -6,10 +6,14 @@ import styled from 'styled-components';
 import '../App.css'
 import { useSidebar } from './SidebarContext';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 
 
 export default function Header() {
+
+
+  const navigate = useNavigate();
   // const { collapsed, toggleSidebar, setLevel2, level2, ClBox, setClBox, } = useSidebar();
 
   const {
@@ -40,85 +44,92 @@ export default function Header() {
   const [progressBar, setprogressBar] = useState(false);
 
 
-  const fncToGetComplaintCategory = () => {
-    //API CALL 1-
-    const reqData = {
-      "type": "complaint_category"
-    }
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reqData)
-    }
-    fetch(GlobalUrl, options).then(res => {
-      if (!res.ok) {
-        throw new Error('Internal server error')
-      }
-      return res.json();
-    }).then(data => {
+  // const fncToGetComplaintCategory = () => {
+  //   //API CALL 1-
+  //   const reqData = {
+  //     "type": "complaint_category"
+  //   }
+  //   const options = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(reqData)
+  //   }
+  //   fetch(GlobalUrl, options).then(res => {
+  //     if (!res.ok) {
+  //       throw new Error('Internal server error')
+  //     }
+  //     return res.json();
+  //   }).then(data => {
 
-      if (data.success) {
-        // console.log(data.result);
+  //     if (data.success) {
+  //       // console.log(data.result);
 
-        setcomplaintCategoryArray(data.result);
-        //LOGIC TO AUTO SELECT THE ELEMENT 
-      }
-      else {
-        // alert("failed")
-        console.log(data);
-      }
+  //       setcomplaintCategoryArray(data.result);
+  //       //LOGIC TO AUTO SELECT THE ELEMENT 
+  //     }
+  //     else {
+  //       // alert("failed")
+  //       console.log(data);
+  //     }
 
-    }).catch(err => {
-      console.log(err);
-    })
+  //   }).catch(err => {
+  //     console.log(err);
+  //   })
+
+  // }
+
+  // const fncToGetComplaintSource = () => {
+  //   //API CALL 1-
+
+  //   const reqData = {
+  //     "type": "complaint_source_list",
+  //   }
+  //   const options = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(reqData)
+  //   }
+  //   fetch(GlobalUrl, options).then(res => {
+  //     if (!res.ok) {
+  //       throw new Error('Internal server error')
+  //     }
+  //     return res.json();
+  //   }).then(data => {
+
+  //     if (data.success) {
+  //       // console.log(data.result);
+  //       setcomplaintSourceArray(data.result);
+
+  //     }
+  //     else {
+  //       console.log(data);
+  //     }
+
+  //   }).catch(err => {
+  //     console.log(err);
+  //   })
+
+  // }
+
+
+
+  // useEffect(() => {
+
+  //   fncToGetComplaintSource()
+  //   fncToGetComplaintCategory()
+
+  // }, []);
+
+
+
+  const fnctogoback = () => {
+    navigate("/CompliantPortal/");
 
   }
-
-  const fncToGetComplaintSource = () => {
-    //API CALL 1-
-
-    const reqData = {
-      "type": "complaint_source_list",
-    }
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reqData)
-    }
-    fetch(GlobalUrl, options).then(res => {
-      if (!res.ok) {
-        throw new Error('Internal server error')
-      }
-      return res.json();
-    }).then(data => {
-
-      if (data.success) {
-        // console.log(data.result);
-        setcomplaintSourceArray(data.result);
-
-      }
-      else {
-        console.log(data);
-      }
-
-    }).catch(err => {
-      console.log(err);
-    })
-
-  }
-
-
-
-  useEffect(() => {
-
-    fncToGetComplaintSource()
-    fncToGetComplaintCategory()
-
-  }, []);
 
   useEffect(() => {
 
@@ -170,19 +181,17 @@ export default function Header() {
   return (
     <div className='header'>
 
-
-
       <Menu titleAccess='toggleSidebar' onClick={toggleSidebar} className={`Hicon ${collapsed ? 'tgnHam' : 'hamburger'}`} />
-      
+
 
       <div className="headOptions">
 
-        <div className='headElm'>
-          <PersonPinCircleRounded className='Hicon' /> {systemLanguage === 'hi' ? "मेरी प्रोफ़ाइल" : "My Profile"}
+        <div oncli onClick={fnctogoback}className='headElm'>
+          <Home  className='Hicon' />  {systemLanguage === 'hi' ? "होम" : "Home"}
         </div>
-        <div className='headElm'>
-          <LogoutOutlined className='Hicon' /> {systemLanguage === 'hi' ? "लॉग आउट" : "Logout"}
-        </div>
+        {/* <div className='headElm'>
+          <LogoutOutlined className='Hicon' /> 
+        </div> */}
         <div className='headElm'>
 
 
