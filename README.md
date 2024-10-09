@@ -30,4 +30,10 @@ A web-based complaint management system where consumers can report issues, and a
 
 1. **Clone the repository**:
    ```bash
-   
+   git clone https://github.com/Darckie/CompliantPortal.git
+2. **Install dependencies:**:
+   ```bash
+   npm install
+2. **Start the development server**:
+   ```bash
+   npm run dev
